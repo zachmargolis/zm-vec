@@ -1,0 +1,8 @@
+zm-vec : A Simple Vector Library in C
+Originally by Zach Margolis
+
+The goal of these files is relatively simple, but still readable code.
+
+Currently, the project uses structs, and passes structs as arguments. A future version may use pointers/references, but for now, call-by-value seems to work well enough.
+
+
