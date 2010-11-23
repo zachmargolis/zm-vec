@@ -1,21 +1,21 @@
 /*
  *  vec4.h
- *  VectorPad
- *
  *  Created by Zach Margolis on 10/10/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
  *
  */
 
 #ifndef VEC4_H_INCLUDED
 #define VEC4_H_INCLUDED
 
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES2/gl.h>
-
-#import <QuartzCore/CATransform3D.h>
 
 #import "vec3.h"
+
+// TODO: change importing so that defs.h doesn't have to be included, and we can link to the OpenGL frameworks
+#include "defs.h"
+//#import <OpenGLES/ES1/gl.h>
+//#import <OpenGLES/ES2/gl.h>
+
+//#import <QuartzCore/CATransform3D.h>
 
 typedef struct {
 	GLfloat x;
@@ -42,5 +42,9 @@ vec4 vec4Normalize(vec4 inVec);
 vec4 vec4Add(vec4 aVec, vec4 bVec);
 
 vec4 CATransform3DTimesVec4(CATransform3D mat, vec4 vec);
+
+char *vec4AsString(const vec4 vec);
+
+#define vec4Subtract(aVec, bVec) vec4Add(aVec, vec4Scale(-1., bVec))
 
 #endif // VEC4_H_INCLUDED

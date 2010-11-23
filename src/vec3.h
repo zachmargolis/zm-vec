@@ -1,17 +1,18 @@
 /*
  *  vec3.h
- *  VectorPad
- *
  *  Created by Zach Margolis on 10/10/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
  *
  */
 
 #ifndef VEC3_H_INCLUDED
 #define VEC3_H_INCLUDED
 
-#import <OpenGLES/ES1/gl.h>
-#import <OpenGLES/ES2/gl.h>
+// TODO: change importing so that defs.h doesn't have to be included, and we can link to the OpenGL frameworks
+#include "defs.h"
+//#import <OpenGLES/ES1/gl.h>
+//#import <OpenGLES/ES2/gl.h>
+
+
 
 typedef struct {
 	GLfloat x;
@@ -33,6 +34,8 @@ vec3 vec3Scale(const GLfloat scalar, const vec3 inVec);
 vec3 vec3Normalize(const vec3 inVec);
 vec3 vec3Add(const vec3 aVec, const vec3 bVec);
 vec3 vec3Cross(const vec3 aVec, const vec3 bVec);
+
+char *vec3AsString(const vec3 vec);
 
 #define vec3Subtract(aVec, bVec) vec3Add(aVec, vec3Scale(-1., bVec))
 

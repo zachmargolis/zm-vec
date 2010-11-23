@@ -1,15 +1,13 @@
 /*
  *  vec4.c
- *  VectorPad
- *
  *  Created by Zach Margolis on 10/10/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
  *
  */
 
 #include "vec4.h"
 
 #import <math.h>
+#import <stdio.h>
 
 const vec4 vec4Zero = {0.0f, 0.0f, 0.0f, 0.0f};
 const vec4 vec4UnitVectorX = {1.0f, 0.0f, 0.0f, 0.0f};
@@ -78,4 +76,13 @@ vec4 CATransform3DTimesVec4(CATransform3D mat, vec4 vec)
                     (vec.x * mat.m31) + (vec.y * mat.m32) + (vec.z * mat.m33) + (vec.w * mat.m34),
                     (vec.x * mat.m41) + (vec.y * mat.m42) + (vec.z * mat.m43) + (vec.w * mat.m44)
                     );
+}
+
+char *vec4AsString(const vec4 vec)
+{
+    static char vec4String[128]; // Estimated safe length for printing
+    
+    sprintf(vec4String, "<%g, %g, %g, %g>", vec.x, vec.y, vec.z, vec.w);
+    
+    return vec4String;
 }

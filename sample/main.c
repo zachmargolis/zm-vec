@@ -46,6 +46,13 @@ int main(int argc, char **argv)
     vec4 aVec4 = vec4MakeFromVec3(aVec3, 7);
     vec3 bVec3 = vec3TruncateVec4(aVec4);
     
-    // In the future, it might be nice to create print functions, for debugging.
+    // There are convenience functions for printing, too
+    vec3 pVec3 = vec3Make(2., 4., 6.);
+    printf("pVec3: %s\n", vec3AsString(pVec3));
+    
+    vec4 pVec4 = vec4Make(1., .5, .125, .0625);
+    printf("pVec4: %s\n", vec4AsString(pVec4));
+    
+    
     return 0;
 }

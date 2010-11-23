@@ -1,15 +1,13 @@
 /*
  *  vec3.c
- *  VectorPad
- *
  *  Created by Zach Margolis on 10/10/10.
- *  Copyright 2010 __MyCompanyName__. All rights reserved.
  *
  */
 
 #include "vec3.h"
 
 #import <math.h>
+#import <stdio.h>
 
 const vec3 vec3Zero = {0.0f, 0.0f, 0.0f};
 const vec3 vec3UnitVectorX = {1.0f, 0.0f, 0.0f};
@@ -20,14 +18,6 @@ vec3 vec3Make(GLfloat x, GLfloat y, GLfloat z)
 {
 	vec3 retVec = {x, y, z};
 	return retVec;
-}
-
-vec3 vec3Set(vec3 vec, const GLfloat x, const GLfloat y, const GLfloat z)
-{
-	vec.x = x;
-	vec.y = y;
-	vec.z = z;
-	return vec;
 }
 
 GLfloat vec3Magnitude(const vec3 inVec)
@@ -69,4 +59,13 @@ vec3 vec3Cross(const vec3 aVec, const vec3 bVec)
                     (bVec.x * aVec.z) - (aVec.x * bVec.z),
                     (aVec.x * bVec.y) - (bVec.x * aVec.y));
 
+}
+
+char *vec3AsString(const vec3 vec)
+{
+    static char vec3String[128]; // Estimated safe length for printing
+    
+    sprintf(vec3String, "<%g, %g, %g>", vec.x, vec.y, vec.z);
+    
+    return vec3String;
 }
