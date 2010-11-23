@@ -3,6 +3,12 @@ Originally by Zach Margolis
 
 The goal of these files is relatively simple, but still readable code.
 
+To get a sense of the project, check out the sample/main.c file. Ideally, it is a straightforward introduction to, and demonstration of, the project.
+
+
+
+Notes
+
 Currently, the project uses structs, and passes structs as arguments. A future version may use pointers/references, but for now, call-by-value seems to work well enough.
 
 
