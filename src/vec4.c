@@ -69,6 +69,12 @@ vec4 vec4Add(vec4 aVec, vec4 bVec)
 					aVec.w + bVec.w);
 }
 
+vec4 vec4Mix(const vec4 aVec, const vec4 bVec, const GLfloat blend)
+{
+    return vec4Add(vec4Scale(blend, aVec),
+                   vec4Scale(1. - blend, bVec));
+}
+
 vec4 CATransform3DTimesVec4(CATransform3D mat, vec4 vec)
 {
     return vec4Make((vec.x * mat.m11) + (vec.y * mat.m12) + (vec.z * mat.m13) + (vec.w * mat.m14),

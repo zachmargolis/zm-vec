@@ -41,6 +41,8 @@ vec4 vec4Scale(GLfloat scalar, vec4 inVec);
 vec4 vec4Normalize(vec4 inVec);
 vec4 vec4Add(vec4 aVec, vec4 bVec);
 
+vec4 vec4Mix(const vec4 aVec, const vec4 bVec, const GLfloat blend);
+
 vec4 CATransform3DTimesVec4(CATransform3D mat, vec4 vec);
 
 char *vec4AsString(const vec4 vec);

@@ -34,6 +34,7 @@ vec3 vec3Scale(const GLfloat scalar, const vec3 inVec);
 vec3 vec3Normalize(const vec3 inVec);
 vec3 vec3Add(const vec3 aVec, const vec3 bVec);
 vec3 vec3Cross(const vec3 aVec, const vec3 bVec);
+vec3 vec3Mix(const vec3 aVec, const vec3 bVec, const GLfloat blend);
 
 char *vec3AsString(const vec3 vec);
 

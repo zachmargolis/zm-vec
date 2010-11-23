@@ -17,6 +17,7 @@ int main(int argc, char **argv)
     // The constructors are of the form vecXMake(...);
     vec3 aVec = vec3Make(1., 2., 3.);
     vec3 bVec = vec3Make(-1., -2., 3.);
+    vec4 cVec = vec4Make(0., 0., 0., 1.);
     
     // Since these are structs, it's easy to access the components
     aVec.x = 10.;
@@ -25,6 +26,7 @@ int main(int argc, char **argv)
     // There are some constants for commonly used vecs
     vec3 zero = vec3Zero;
     vec3 yUp = vec3UnitVectorY;
+    vec4 zAxis = vec4UnitVectorZ;
     
     // Most common vector operations are currently supported
     GLfloat scalar = 1.;
@@ -36,6 +38,7 @@ int main(int argc, char **argv)
     resultVec = vec3Scale(scalar, aVec);
     resultVec = vec3Normalize(aVec);
     resultVec = vec3Cross(aVec, bVec);
+    resultVec = vec3Mix(aVec, bVec, scalar);
     
     resultF = vec3Magnitude(aVec);
     resultF = vec3Dot(aVec, bVec);

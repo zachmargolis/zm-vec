@@ -61,6 +61,12 @@ vec3 vec3Cross(const vec3 aVec, const vec3 bVec)
 
 }
 
+vec3 vec3Mix(const vec3 aVec, const vec3 bVec, const GLfloat blend)
+{
+    return vec3Add(vec3Scale(blend, aVec),
+                   vec3Scale(1. - blend, bVec));
+}
+
 char *vec3AsString(const vec3 vec)
 {
     static char vec3String[128]; // Estimated safe length for printing
