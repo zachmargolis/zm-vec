@@ -14,10 +14,17 @@ const vec3 vec3UnitVectorX = {1.0f, 0.0f, 0.0f};
 const vec3 vec3UnitVectorY = {0.0f, 1.0f, 0.0f};
 const vec3 vec3UnitVectorZ = {0.0f, 0.0f, 1.0f};
 
-vec3 vec3Make(GLfloat x, GLfloat y, GLfloat z)
+vec3 vec3Make(const GLfloat x, const GLfloat y, const GLfloat z)
 {
 	vec3 retVec = {x, y, z};
 	return retVec;
+}
+
+int vec3Equal(const vec3 aVec, const vec3 bVec)
+{
+    return (aVec.x == bVec.x &&
+            aVec.y == bVec.y &&
+            aVec.z == bVec.z);
 }
 
 GLfloat vec3Magnitude(const vec3 inVec)
@@ -53,6 +60,11 @@ vec3 vec3Add(const vec3 aVec, const vec3 bVec)
 				    aVec.z + bVec.z);
 }
 
+vec3 vec3Subtract(const vec3 aVec, const vec3 bVec)
+{
+    return vec3Add(aVec, vec3Scale(-1., bVec));
+}
+
 vec3 vec3Cross(const vec3 aVec, const vec3 bVec)
 {
     return vec3Make((aVec.y * bVec.z) - (bVec.y * aVec.z),
@@ -67,11 +79,9 @@ vec3 vec3Mix(const vec3 aVec, const vec3 bVec, const GLfloat blend)
                    vec3Scale(1. - blend, bVec));
 }
 
-char *vec3AsString(const vec3 vec)
+char *vec3ToString(const vec3 vec, char *str)
 {
-    static char vec3String[128]; // Estimated safe length for printing
+    sprintf(str, "<%g, %g, %g>", vec.x, vec.y, vec.z);
     
-    sprintf(vec3String, "<%g, %g, %g>", vec.x, vec.y, vec.z);
-    
-    return vec3String;
+    return str;
 }

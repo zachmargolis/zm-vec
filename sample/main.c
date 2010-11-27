@@ -49,12 +49,38 @@ int main(int argc, char **argv)
     vec4 aVec4 = vec4MakeFromVec3(aVec3, 7);
     vec3 bVec3 = vec3TruncateVec4(aVec4);
     
-    // There are convenience functions for printing, too
+    // There are convenience functions for printing, too.
+    // Given a char* address, they will the string to that address, and return the
+    // address of the string. The simplest solution for printing so far is to give 
+    // the vecXToString functions a char[] array allocated on the stack.
+    //
+    // We guess that 128 chars is probably safe for most vectors.
+
     vec3 pVec3 = vec3Make(2., 4., 6.);
-    printf("pVec3: %s\n", vec3AsString(pVec3));
+    char pVec3Chars[128];
+    printf("pVec3: %s\n", vec3ToString(pVec3, pVec3Chars));
     
     vec4 pVec4 = vec4Make(1., .5, .125, .0625);
-    printf("pVec4: %s\n", vec4AsString(pVec4));
+    char pVec4Chars[128];
+    printf("pVec4: %s\n", vec4ToString(pVec4, pVec4Chars));
+    
+    // Equality
+    aVec = vec3Make(0., 1., 2.);
+    bVec = vec3Make(0., 2., 2.);
+    char aVecChars[128];
+    char bVecChars[128];
+    
+    printf("\n");
+    printf("aVec: %s\nbVec: %s\n", vec3ToString(aVec, aVecChars), vec3ToString(bVec, bVecChars));
+    
+    if(vec3Equal(aVec, bVec))
+    {
+        printf("aVec is equal to bVec\n");
+    }
+    else
+    {
+        printf("aVec is NOT equal to bVec\n");
+    }
     
     
     return 0;
