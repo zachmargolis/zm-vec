@@ -17,8 +17,8 @@ const vec4 vec4UnitVectorW = {0.0f, 0.0f, 0.0f, 1.0f};
 
 vec4 vec4Make(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat w)
 {
-	vec4 retVec = {x, y, z, w};
-	return retVec;
+    vec4 retVec = {x, y, z, w};
+    return retVec;
 }
 
 vec4 vec4MakeFromVec3(const vec3 vec, const GLfloat w)
@@ -45,39 +45,39 @@ int vec4Equal(const vec4 aVec, const vec4 bVec)
 
 GLfloat vec4Magnitude(const vec4 inVec)
 {
-	return sqrt((inVec.x * inVec.x) +
-				(inVec.y * inVec.y) +
-				(inVec.z * inVec.z) +
-				(inVec.w * inVec.w) );
+    return sqrt((inVec.x * inVec.x) +
+                (inVec.y * inVec.y) +
+                (inVec.z * inVec.z) +
+                (inVec.w * inVec.w) );
 }
 
 GLfloat vec4Dot(const vec4 aVec, const vec4 bVec)
 {
-	return (aVec.x * bVec.x) + 
-		   (aVec.y * bVec.y) + 
-		   (aVec.z * bVec.z) + 
-		   (aVec.w * bVec.w);
+    return (aVec.x * bVec.x) + 
+           (aVec.y * bVec.y) + 
+           (aVec.z * bVec.z) + 
+           (aVec.w * bVec.w);
 }
 
 vec4 vec4Scale(const GLfloat scalar, const vec4 inVec)
 {
-	return vec4Make(scalar * inVec.x,
-					scalar * inVec.y,
-					scalar * inVec.z,
-					scalar * inVec.w);
+    return vec4Make(scalar * inVec.x,
+                    scalar * inVec.y,
+                    scalar * inVec.z,
+                    scalar * inVec.w);
 }
 
 vec4 vec4Normalize(const vec4 inVec)
 {
-	return vec4Scale(1.0f/vec4Magnitude(inVec), inVec);
+    return vec4Scale(1.0f/vec4Magnitude(inVec), inVec);
 }
 
 vec4 vec4Add(const vec4 aVec, const vec4 bVec)
 {
-	return vec4Make(aVec.x + bVec.x,
-					aVec.y + bVec.y,
-					aVec.z + bVec.z,
-					aVec.w + bVec.w);
+    return vec4Make(aVec.x + bVec.x,
+                    aVec.y + bVec.y,
+                    aVec.z + bVec.z,
+                    aVec.w + bVec.w);
 }
 
 vec4 vec4Subtract(const vec4 aVec, const vec4 bVec)
