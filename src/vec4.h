@@ -18,10 +18,10 @@
 //#import <QuartzCore/CATransform3D.h>
 
 typedef struct {
-	GLfloat x;
-	GLfloat y;
-	GLfloat z;
-	GLfloat w;
+    GLfloat x;
+    GLfloat y;
+    GLfloat z;
+    GLfloat w;
 } vec4;
 
 extern const vec4 vec4Zero;
