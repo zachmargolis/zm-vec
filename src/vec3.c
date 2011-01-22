@@ -5,9 +5,8 @@
  */
 
 #include "vec3.h"
-
-#import <math.h>
-#import <stdio.h>
+#include <math.h>
+#include <stdio.h>
 
 const vec3 vec3Zero = {0.0f, 0.0f, 0.0f};
 const vec3 vec3UnitVectorX = {1.0f, 0.0f, 0.0f};
@@ -18,6 +17,16 @@ vec3 vec3Make(const GLfloat x, const GLfloat y, const GLfloat z)
 {
     vec3 retVec = {x, y, z};
     return retVec;
+}
+
+vec3 vec3MakeFromVec2(const vec2 vec, GLfloat z)
+{
+    return vec3Make(vec.x, vec.y, z);
+}
+
+vec2 vec2TruncateVec3(const vec3 vec)
+{
+    return vec2Make(vec.x, vec.y);
 }
 
 int vec3Equal(const vec3 aVec, const vec3 bVec)

@@ -5,9 +5,8 @@
  */
 
 #include "vec4.h"
-
-#import <math.h>
-#import <stdio.h>
+#include <math.h>
+#include <stdio.h>
 
 const vec4 vec4Zero = {0.0f, 0.0f, 0.0f, 0.0f};
 const vec4 vec4UnitVectorX = {1.0f, 0.0f, 0.0f, 0.0f};

@@ -11,6 +11,7 @@
 #include "defs.h"
 //#import <OpenGLES/ES1/gl.h>
 //#import <OpenGLES/ES2/gl.h>
+#include "vec2.h"
 
 
 
@@ -26,6 +27,8 @@ extern const vec3 vec3UnitVectorY;
 extern const vec3 vec3UnitVectorZ;
 
 vec3 vec3Make(const GLfloat x, const GLfloat y, const GLfloat z); 
+vec3 vec3MakeFromVec2(const vec2 vec, GLfloat z);
+vec2 vec2TruncateVec3(const vec3 vec);
 
 int vec3Equal(const vec3 aVec, const vec3 bVec);
 

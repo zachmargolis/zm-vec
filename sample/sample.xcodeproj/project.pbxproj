@@ -10,6 +10,7 @@
 		9243B04D129B870F00360B37 /* vec3.c in Sources */ = {isa = PBXBuildFile; fileRef = 9243B012129B854200360B37 /* vec3.c */; };
 		9243B04E129B870F00360B37 /* vec4.c in Sources */ = {isa = PBXBuildFile; fileRef = 9243B014129B854200360B37 /* vec4.c */; };
 		9243B04F129B870F00360B37 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 9243B018129B854D00360B37 /* main.c */; };
+		92DC6FEF12EB54F90003FA32 /* vec2.c in Sources */ = {isa = PBXBuildFile; fileRef = 92DC6FEE12EB54F90003FA32 /* vec2.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,8 @@
 		9243B018129B854D00360B37 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		9243B049129B86FC00360B37 /* sample.o */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sample.o; sourceTree = BUILT_PRODUCTS_DIR; };
 		928929DC129B881B00B5E992 /* defs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = defs.h; sourceTree = "<group>"; };
+		92DC6FED12EB54F90003FA32 /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec2.h; sourceTree = "<group>"; };
+		92DC6FEE12EB54F90003FA32 /* vec2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vec2.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +49,8 @@
 		9243B011129B854200360B37 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				92DC6FEE12EB54F90003FA32 /* vec2.c */,
+				92DC6FED12EB54F90003FA32 /* vec2.h */,
 				9243B012129B854200360B37 /* vec3.c */,
 				9243B013129B854200360B37 /* vec3.h */,
 				9243B014129B854200360B37 /* vec4.c */,
@@ -115,6 +120,7 @@
 				9243B04D129B870F00360B37 /* vec3.c in Sources */,
 				9243B04E129B870F00360B37 /* vec4.c in Sources */,
 				9243B04F129B870F00360B37 /* main.c in Sources */,
+				92DC6FEF12EB54F90003FA32 /* vec2.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

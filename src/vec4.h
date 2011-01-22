@@ -8,7 +8,6 @@
 #define VEC4_H_INCLUDED
 
 
-#import "vec3.h"
 
 // TODO: change importing so that defs.h doesn't have to be included, and we can link to the OpenGL frameworks
 #include "defs.h"
@@ -16,6 +15,7 @@
 //#import <OpenGLES/ES2/gl.h>
 
 //#import <QuartzCore/CATransform3D.h>
+#include "vec3.h"
 
 typedef struct {
     GLfloat x;
@@ -31,8 +31,10 @@ extern const vec4 vec4UnitVectorZ;
 extern const vec4 vec4UnitVectorW;
 
 vec4 vec4Make(const GLfloat x, const GLfloat y, const GLfloat z, const GLfloat w); 
+vec4 vec4MakeFromVec2(const vec2 vec, GLfloat z, GLfloat w);
 vec4 vec4MakeFromVec3(const vec3 vec, GLfloat w);
-vec3 vec3TruncateVec4(const vec4 vec); // In this file because of some nasty forward declaration stuff
+vec2 vec2TruncateVec4(const vec4 vec);
+vec3 vec3TruncateVec4(const vec4 vec);
 
 int vec4Equal(const vec4 aVec, const vec4 bVec);
 
